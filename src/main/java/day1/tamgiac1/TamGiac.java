@@ -1,6 +1,6 @@
 package day1.tamgiac1;
 
-public class TamGiac {
+public class TamGiac implements HinhHoc2D {
     // Thuộc tính
     private double d;
     private double h;
