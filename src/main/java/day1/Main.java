@@ -10,7 +10,10 @@ public class Main {
         // Nhập chiều dài, chiều rộng
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập chiều dài: ");
+<<<<<<< HEAD
 
+=======
+>>>>>>> a976d06 (Initial commit)
         chieuDai = scanner.nextDouble();
         System.out.print("Chiều rộng: ");
         chieuRong = scanner.nextDouble();
