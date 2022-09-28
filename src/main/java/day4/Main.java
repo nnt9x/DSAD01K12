@@ -5,12 +5,13 @@ public class Main {
         SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
         singlyLinkedList.insertFirst(5);
         singlyLinkedList.insertFirst(6);
-        singlyLinkedList.insertEnd(7);
+        singlyLinkedList.insertFirst(7);
+        singlyLinkedList.insertFirst(8);
         singlyLinkedList.printLinkedList();
-        singlyLinkedList.insertMid(8, 1);
+        singlyLinkedList.deleteMid(2);
         singlyLinkedList.printLinkedList();
-
-
+        singlyLinkedList.deleteMid(2);
+        singlyLinkedList.printLinkedList();
         int size = singlyLinkedList.size();
         System.out.println("Kích thước " + size);
     }

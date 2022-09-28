@@ -7,9 +7,9 @@ public interface LinkedListOperator {
 
     public void insertMid(int data, int position);
 
-    public void deleteFirst(int data);
+    public void deleteFirst();
 
-    public void deleteEnd(int data);
+    public void deleteEnd();
 
     public void deleteMid(int position);
 

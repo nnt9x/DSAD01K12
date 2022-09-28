@@ -1,48 +1,45 @@
-package day4;
+package day4.linklist2;
 
-public class SinglyLinkedList implements LinkedListOperator {
+public class SinglyLinkedList<T> implements LinkedListOperator<T> {
 
-    private Node head = null;
+    private Node<T> head = null;
 
     @Override
-    public void insertFirst(int data) {
-        Node newNode = new Node(data);
+    public void insertFirst(T data) {
+        Node<T> newNode = new Node<>(data);
         newNode.setNext(head);
         head = newNode;
     }
 
     @Override
-    public void insertEnd(int data) {
+    public void insertEnd(T data) {
         // Làm thế nào để insert vào cuối ??
         if (head == null) {
             insertFirst(data);
         } else {
-            Node item = head;
-            while (true) {
-                if (item.getNext() == null) {
-                    break;
-                }
+            Node<T> item = head;
+            while (item.getNext() != null) {
                 item = item.getNext();
             }
-            Node lastNode = new Node(data);
+            Node<T> lastNode = new Node<T>(data);
             item.setNext(lastNode);
         }
     }
 
     @Override
-    public void insertMid(int data, int position) {
+    public void insertMid(T data, int position) {
         // Kiểm position < size -1
         if (position >= size() - 1) {
             throw new RuntimeException("Vượt quá kích thước linked list");
         }
         // Ngược lại -> hợp lệ?
         // Cần tìm ra Node vị trí pos - 1
-        Node tmp = head;
+        Node<T> tmp = head;
         for (int i = 0; i < position - 1; i++) {
             tmp = tmp.getNext();
         }
         // Tạo node mới
-        Node newNode = new Node(data);
+        Node<T> newNode = new Node<T>(data);
         newNode.setNext(tmp.getNext());
         tmp.setNext(newNode);
     }
@@ -53,7 +50,7 @@ public class SinglyLinkedList implements LinkedListOperator {
         if (size() == 0) {
             throw new RuntimeException("Danh sách rỗng");
         }
-        Node tmp = head;
+        Node<T> tmp = head;
         head = tmp.getNext();
         tmp.setNext(null);
 
@@ -64,11 +61,8 @@ public class SinglyLinkedList implements LinkedListOperator {
         if (size() == 0) {
             throw new RuntimeException("Danh sách rỗng");
         }
-        Node tmp = head;
-        while (true) {
-            if (tmp.getNext().getNext() == null) {
-                break;
-            }
+        Node<T> tmp = head;
+        while (tmp.getNext().getNext() != null) {
             tmp = tmp.getNext();
         }
         // tmp là gân cuối
@@ -86,7 +80,7 @@ public class SinglyLinkedList implements LinkedListOperator {
             deleteEnd();
         } else {
             // Tìm Node ở position và position -1
-            Node preNode = head, currentNode;
+            Node<T> preNode = head, currentNode;
             for (int i = 0; i < position - 1; i++) {
                 preNode = preNode.getNext();
             }
@@ -97,7 +91,7 @@ public class SinglyLinkedList implements LinkedListOperator {
     }
 
     @Override
-    public void update(int newData, int position) {
+    public void update(T newData, int position) {
 
     }
 
@@ -106,7 +100,7 @@ public class SinglyLinkedList implements LinkedListOperator {
         // Làm thế nào để tính kích thước??
         int count = 0;
         if (head != null) {
-            Node tmp = head;
+            Node<T> tmp = head;
             while (true) {
                 if (tmp != null) {
                     count++;
@@ -120,12 +114,12 @@ public class SinglyLinkedList implements LinkedListOperator {
     }
 
     @Override
-    public int search(int data) {
+    public int search(T data) {
         return 0;
     }
 
     @Override
-    public int search(Node node) {
+    public int search(Node<T> node) {
         return 0;
     }
 
