@@ -11,5 +11,6 @@ public class MainBT2 {
         // In ra cân nặng
         tinhToan.tinhCanNang(hinhCau, "Fe");
         tinhToan.tinhCanNang(hinhCau,"Al");
+        tinhToan.tinhCanNang(hinhCau,"Au");
     }
 }
