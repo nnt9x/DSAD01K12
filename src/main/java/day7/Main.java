@@ -1,13 +1,24 @@
 package day7;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-        binarySearchTree.insert(8);
-        binarySearchTree.insert(3);
-        binarySearchTree.insert(10);
-        binarySearchTree.insert(1);
-        binarySearchTree.insert(6);
-        binarySearchTree.insert(4);
+        ManagerStudent managerStudent = new ManagerStudent();
+        managerStudent.insertStudent(new Student(10, "Nguyen Van A","HN"));
+        managerStudent.insertStudent(new Student(12, "Nguyen Van B","HN"));
+
+        System.out.println("Nhap id can tim: ");
+        Scanner scanner = new Scanner(System.in);
+        long id = scanner.nextLong();
+        scanner.close();
+
+        Student s = managerStudent.findById(id);
+        if(s == null){
+            System.out.println("Khong tim thay");
+        }
+        else {
+            System.out.println(s);
+        }
     }
 }

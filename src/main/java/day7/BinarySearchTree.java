@@ -1,7 +1,7 @@
 package day7;
 
-public class BinarySearchTree {
-    private Node root;
+public class BinarySearchTree<T extends Comparable<T>> {
+    private Node<T> root;
 
     public BinarySearchTree() {
         this.root = null;
@@ -14,21 +14,22 @@ public class BinarySearchTree {
     // TH2: cay ko rong:
     // Neu value > root.value -> root.right = Node(value)
     // Neu value < root.value -> root.left = Node(value)
-    public void insert(long value){
+    public void insert(T value){
         if(root == null){
-            root = new Node(value);
+            root = new Node<T>(value);
             return;
         }
-        Node tmp = root;
+        Node<T> tmp = root;
+
         while (true){
-            if(value > tmp.getValue()){
+            if(value.compareTo(tmp.getValue()) > 0){
                 if(tmp.getRight() == null){
                     tmp.setRight(new Node(value));
                 }
                 else {
                     tmp = tmp.getRight();
                 }
-            } else if (value < tmp.getValue()) {
+            } else if (value.compareTo(tmp.getValue()) < 0) {
                 if(tmp.getLeft() == null){
                     tmp.setLeft(new Node(value));
                 }
@@ -40,9 +41,21 @@ public class BinarySearchTree {
         }
     }
 
-    public Node contain(long value){
+    public Node<T> contain(T value){
         // Them code
-        return null;
+        Node<T> tmp = root;
+        while (tmp != null){
+            if(value.compareTo(tmp.getValue())==0){
+                return tmp;
+            }
+            else if (value.compareTo(tmp.getValue()) <0){
+                tmp = tmp.getLeft();
+            }
+            else {
+                tmp = tmp.getRight();
+            }
+        }
+        return tmp;
     }
 
 }

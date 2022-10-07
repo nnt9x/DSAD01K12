@@ -1,41 +1,41 @@
 package day7;
 
-public class Node {
-    private long value;
-    private Node left;
-    private Node right;
+public class Node <T>  {
+    private T value;
+    private Node<T> left;
+    private Node<T> right;
 
-    public Node(long value) {
+    public Node(T value) {
         this.value = value;
     }
 
-    public Node(long value, Node left, Node right) {
+    public Node(T value, Node<T> left, Node<T> right) {
         this.value = value;
         this.left = left;
         this.right = right;
     }
 
-    public long getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(long value) {
+    public void setValue(T value) {
         this.value = value;
     }
 
-    public Node getLeft() {
+    public Node<T> getLeft() {
         return left;
     }
 
-    public void setLeft(Node left) {
+    public void setLeft(Node<T> left) {
         this.left = left;
     }
 
-    public Node getRight() {
+    public Node<T> getRight() {
         return right;
     }
 
-    public void setRight(Node right) {
+    public void setRight(Node<T> right) {
         this.right = right;
     }
 
@@ -47,4 +47,5 @@ public class Node {
                 ", right=" + right +
                 '}';
     }
+
 }
