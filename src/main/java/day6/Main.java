@@ -2,32 +2,12 @@ package day6;
 
 public class Main {
     public static void main(String[] args) {
-        /*
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
-        Node node7 = new Node(7);
 
-        node1.setNodeLeft(node2);
-        node1.setNodeRight(node3);
-
-        node2.setNodeLeft(node4);
-        node2.setNodeRight(node5);
-
-        node5.setNodeLeft(node6);
-        node5.setNodeRight(node7);
-
-        BinaryTree binaryTree = new BinaryTree(node1);
-         */
-
-        Node node1 = new Node(1);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
-        Node node9 = new Node(9);
-        Node node12 = new Node(12);
+        Node<Integer> node1 = new Node<>(1);
+        Node<Integer> node5 = new Node<>(5);
+        Node<Integer> node6 = new Node<>(6);
+        Node<Integer> node9 = new Node<>(9);
+        Node<Integer> node12 = new Node<>(12);
 
         node1.setNodeRight(node9);
         node1.setNodeLeft(node12);
@@ -42,6 +22,47 @@ public class Main {
         tree.preorder(node1);
         System.out.println();
         tree.postorder(node1);
+
+
+        // Cay tree2
+        Node<String> nodeA = new Node<>("A");
+        Node<String> nodeB = new Node<>("B");
+        Node<String> nodeC = new Node<>("C");
+        Node<String> nodeD = new Node<>("D");
+        Node<String> nodeE = new Node<>("E");
+        Node<String> nodeF = new Node<>("F");
+        Node<String> nodeG = new Node<>("G");
+        Node<String> nodeH = new Node<>("H");
+        Node<String> nodeI = new Node<>("I");
+
+        nodeF.setNodeRight(nodeG);
+        nodeG.setNodeRight(nodeI);
+        nodeI.setNodeLeft(nodeH);
+
+        nodeF.setNodeLeft(nodeB);
+        nodeB.setNodeLeft(nodeA);
+        nodeB.setNodeRight(nodeD);
+        nodeD.setNodeLeft(nodeC);
+        nodeD.setNodeRight(nodeE);
+
+
+        BinaryTree binaryTree2 = new BinaryTree(nodeF);
+
+        System.out.println();
+        System.out.print("InOrder: ");
+        binaryTree2.inorder(nodeF);
+        System.out.println();
+
+        System.out.print("PreOrder: ");
+        binaryTree2.preorder(nodeF);
+        System.out.println();
+
+        System.out.print("PostOrder: ");
+        binaryTree2.postorder(nodeF);
+        System.out.println();
+
+
+
 
     }
 }

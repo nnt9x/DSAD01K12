@@ -1,28 +1,28 @@
 package day6;
 
-public class Node {
+public class Node <T>{
     // value
-    private long value;
+    private T value;
     // node left
     private Node nodeLeft = null;
     // node right
     private Node nodeRight = null;
 
-    public Node(long value) {
+    public Node(T value) {
         this.value = value;
     }
 
-    public Node(long value, Node nodeLeft, Node nodeRight) {
+    public Node(T value, Node nodeLeft, Node nodeRight) {
         this.value = value;
         this.nodeLeft = nodeLeft;
         this.nodeRight = nodeRight;
     }
 
-    public long getValue() {
+    public T getValue() {
         return value;
     }
 
-    public void setValue(long value) {
+    public void setValue(T value) {
         this.value = value;
     }
 
